@@ -149,6 +149,32 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Client.hpp" />
+    <ClInclude Include="EV_ReceiveAck.hpp" />
+    <ClInclude Include="EV_ReceiveData.hpp" />
+    <ClInclude Include="EV_ReceiveLastData.hpp" />
+    <ClInclude Include="EV_SendAck.hpp" />
+    <ClInclude Include="EV_SendData.hpp" />
+    <ClInclude Include="EV_SendLastData.hpp" />
+    <ClInclude Include="EV_SendRRQ.hpp" />
+    <ClInclude Include="EV_SendWRQ.hpp" />
+    <ClInclude Include="EV_Timeout.hpp" />
+    <ClInclude Include="GenericEvent.hpp" />
+    <ClInclude Include="GenericFSM.hpp" />
+    <ClInclude Include="GenericState.hpp" />
+    <ClInclude Include="ST_Idle.hpp" />
+    <ClInclude Include="ST_ReceiveAck.hpp" />
+    <ClInclude Include="ST_ReceiveData.hpp" />
+    <ClInclude Include="ST_ReceiveDataAck.hpp" />
+    <ClInclude Include="ST_ReceiveFirstData.hpp" />
+    <ClInclude Include="ST_ReceiveLastDataAck.hpp" />
+    <ClInclude Include="ST_ReceiveWRQAck.hpp" />
+    <ClInclude Include="ST_SendData.hpp" />
+    <ClInclude Include="ST_SendDataAck.hpp" />
+    <ClInclude Include="ST_SendLastDataAck.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Client.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

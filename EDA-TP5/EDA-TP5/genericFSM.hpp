@@ -3,7 +3,7 @@
 //  TP5
 //
 //  Created by faq on 4/5/17.
-//  Copyright Â© 2017 faq. All rights reserved.
+//  Copyright © 2017 faq. All rights reserved.
 //
 
 #ifndef genericFSM_hpp
