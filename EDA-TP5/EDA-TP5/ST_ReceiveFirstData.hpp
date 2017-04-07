@@ -1,14 +1,15 @@
 #ifndef R_FIRST_DATA_HPP
 #define R_FIRST_DATA_HPP
 
-#include "GenericState.hpp"
+#include "genericEvent.hpp"
+#include "genericState.hpp"
+#include "ST_SendDataAck.hpp"
 
-class ST_ReceiveFirstData:public genericState 
+class ST_ReceiveFirstData : public genericState
 {
 public:
 	genericState* on_timeout(genericEvent* ev);
-	genericState* on_r_data(genericEvent* ev);
-	
+	genericState* on_ReceiveData(genericEvent* ev);
 };
 
 #endif // !R_FIRST_DATA_HPP

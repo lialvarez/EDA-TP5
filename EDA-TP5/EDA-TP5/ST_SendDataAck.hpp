@@ -1,12 +1,12 @@
 #ifndef ST_S_DATA_ACK_HPP
 #define ST_S_DATA_ACK_HPP
 
-#include "GenericState.hpp"
+#include "genericState.hpp"
+#include "ST_ReceiveData.hpp"
 
-class ST_SendDataAck:public genericState
+class ST_SendDataAck : public genericState
 {
 public:
-	genericState* on_s_data(genericEvent* ev);
-
+	genericState* on_SendAck(genericEvent* ev);
 };
 #endif // !ST_S_DATA_ACK_HPP
