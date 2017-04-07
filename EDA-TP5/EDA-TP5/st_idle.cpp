@@ -1,5 +1,7 @@
 #include <stdio.h>
-#include "st_idle.hpp"
+#include "ST_Idle.hpp"
+#include "ST_ReceiveWRQAck.hpp"
+#include "ST_ReceiveFirstData.hpp"
 
 using namespace std;
 

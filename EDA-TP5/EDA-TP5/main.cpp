@@ -3,7 +3,7 @@
 #include "genericFSM.hpp"
 #include "genericState.hpp"
 #include "genericEvent.hpp"
-#include "st_idle.hpp"
+#include "ST_Idle.hpp"
 #include "ST_ReceiveWRQAck.hpp"
 #include "ST_SendData.hpp"
 #include "ST_ReceiveDataAck.hpp"
@@ -31,6 +31,7 @@ int main()
 	StateA = StateA->on_timeout(ev);
 	StateA = StateA->on_ReceiveAck(ev);
 
+	cin.get();
 	return 0;
 }
 

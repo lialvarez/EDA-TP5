@@ -2,7 +2,6 @@
 #define ST_S_LAST_DATA_ACK_HPP
 
 #include "genericState.hpp"
-#include "st_idle.hpp"
 
 class ST_SendLastDataAck : public genericState
 {

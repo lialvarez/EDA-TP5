@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include "ST_ReceiveData.hpp"
+#include "ST_SendDataAck.hpp"
+#include "ST_SendLastDataAck.hpp"
 
 using namespace std;
 

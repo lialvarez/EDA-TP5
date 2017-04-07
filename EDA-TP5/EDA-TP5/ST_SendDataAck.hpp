@@ -2,7 +2,6 @@
 #define ST_S_DATA_ACK_HPP
 
 #include "genericState.hpp"
-#include "ST_ReceiveData.hpp"
 
 class ST_SendDataAck : public genericState
 {

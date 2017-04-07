@@ -1,6 +1,7 @@
 #ifndef GENERIC_STATE_H
 #define GENERIC_STATE_H
 
+#include <iostream>
 #include "genericEvent.hpp"
 
 class genericState

@@ -1,9 +1,7 @@
 #ifndef R_FIRST_DATA_HPP
 #define R_FIRST_DATA_HPP
 
-#include "genericEvent.hpp"
 #include "genericState.hpp"
-#include "ST_SendDataAck.hpp"
 
 class ST_ReceiveFirstData : public genericState
 {
