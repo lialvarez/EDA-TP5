@@ -1,7 +1,7 @@
 #ifndef EV_R_DATA_HPP
 #define EV_R_DATA_HPP
 
-#include "GenericEvent.hpp"
+#include "genericEvent.hpp"
 
 class EV_ReceiveData:public genericEvent
 {

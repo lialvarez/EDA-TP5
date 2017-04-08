@@ -1,7 +1,7 @@
 #ifndef EV_R_TIMEOUT_HPP
 #define EV_R_TIMEOUT_HPP
 
-#include "GenericEvent.hpp"
+#include "genericEvent.hpp"
 
 class EV_Timeout:public genericEvent
 {

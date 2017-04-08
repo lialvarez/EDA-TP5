@@ -1,7 +1,7 @@
 #ifndef EV_S_RRQ_HPP
 #define EV_S_RRQ_HPP
 
-#include "GenericEvent.hpp"
+#include "genericEvent.hpp"
 
 class EV_SendRRQ: public genericEvent
 {

@@ -1,4 +1,4 @@
-#include "GenericFSM.hpp"
+#include "genericFSM.hpp"
 
 void genericFSM::Dispatch(genericEvent *ev)
 {

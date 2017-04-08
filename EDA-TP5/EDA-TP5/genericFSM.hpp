@@ -1,11 +1,3 @@
-//
-//  genericFSM.hpp
-//  TP5
-//
-//  Created by faq on 4/5/17.
-//  Copyright © 2017 faq. All rights reserved.
-//
-
 #ifndef genericFSM_hpp
 #define genericFSM_hpp
 

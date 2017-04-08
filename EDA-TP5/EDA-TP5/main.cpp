@@ -20,31 +20,12 @@ int main()
 	genericFSM FSM;
 	genericEvent *ev = nullptr;
 
-	while (true)
+	while (true) //hacer el evento EXIT PARA SALIR DEL LOOP
 	{
 		ev = client.eventGenerator();
 		FSM.Dispatch(ev);
 	}
-		
-
-	
-
-
-	genericEvent* ev = nullptr;
-	genericState* StateA = (genericState*) new ST_Idle();
-	
-/* prueba rustica para ver chequear que anden los cambios de estados (por ahora solo probe los de WRQ porque es la una de la maniana y me quiero ir a dormir)*/
-	StateA = StateA->on_SendWRQ(ev);
-	StateA = StateA->on_timeout(ev);
-	StateA = StateA->on_ReceiveAck(ev);
-	StateA = StateA->on_SendData(ev);
-	StateA = StateA->on_timeout(ev);
-	StateA = StateA->on_ReceiveAck(ev);
-	StateA = StateA->on_SendLastData(ev);
-	StateA = StateA->on_timeout(ev);
-	StateA = StateA->on_ReceiveAck(ev);
-
-	cin.get();
+//	cin.get();
 	return 0;
 }
 

@@ -1,7 +1,7 @@
 #ifndef EV_S_LAST_DATA_HPP
 #define EV_S_LAST_DATA_HPP
 
-#include "GenericEvent.hpp"
+#include "genericEvent.hpp"
 
 class EV_SendLastData:public genericEvent
 {

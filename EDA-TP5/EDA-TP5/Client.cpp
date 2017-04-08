@@ -1,5 +1,15 @@
 #include "Client.hpp"
-
+#include "Screen.hpp"
+#include "EV_SendWRQ.hpp"
+#include "EV_SendRRQ.hpp"
+#include "EV_SendData.hpp"
+#include "EV_SendLastData.hpp"
+#include "EV_SendAck.hpp"
+#include "EV_SendAck.hpp"
+#include "EV_ReceiveAck.hpp"
+#include "EV_ReceiveData.hpp"
+#include "EV_ReceiveLastData.hpp"
+#include "EV_Timeout.hpp"
 
 Client::Client()
 {

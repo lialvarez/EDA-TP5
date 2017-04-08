@@ -1,7 +1,7 @@
 #ifndef EV_R_ACK_HPP
 #define EV_R_ACK_HPP
 
-#include "GenericEvent.hpp"
+#include "genericEvent.hpp"
 
 class EV_ReceiveAck:public genericEvent
 {
