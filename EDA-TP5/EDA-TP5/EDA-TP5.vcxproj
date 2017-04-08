@@ -162,6 +162,7 @@
     <ClInclude Include="GenericEvent.hpp" />
     <ClInclude Include="GenericFSM.hpp" />
     <ClInclude Include="GenericState.hpp" />
+    <ClInclude Include="Screen.hpp" />
     <ClInclude Include="ST_Idle.hpp" />
     <ClInclude Include="ST_ReceiveAck.hpp" />
     <ClInclude Include="ST_ReceiveData.hpp" />
@@ -175,6 +176,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp" />
+    <ClCompile Include="GenericFSM.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="ST_Idle.cpp" />
     <ClCompile Include="ST_ReceiveData.cpp" />

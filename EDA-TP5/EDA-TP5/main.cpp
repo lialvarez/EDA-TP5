@@ -1,5 +1,6 @@
 #include <iostream>
 #include <curses.h>
+#include "Client.hpp"
 #include "genericFSM.hpp"
 #include "genericState.hpp"
 #include "genericEvent.hpp"
@@ -15,10 +16,22 @@ using namespace std;
 int main()
 {
 	cout << "Hola, el codigo compila" << endl;
+	Client client;
+	genericFSM FSM;
+	genericEvent *ev = nullptr;
+
+	while (true)
+	{
+		ev = client.eventGenerator();
+		FSM.Dispatch(ev);
+	}
+		
+
 	
+
+
 	genericEvent* ev = nullptr;
 	genericState* StateA = (genericState*) new ST_Idle();
-	
 	
 /* prueba rustica para ver chequear que anden los cambios de estados (por ahora solo probe los de WRQ porque es la una de la maniana y me quiero ir a dormir)*/
 	StateA = StateA->on_SendWRQ(ev);

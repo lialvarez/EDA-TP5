@@ -3,10 +3,10 @@
 
 #include "GenericEvent.hpp"
 
-class EV_ReceiveAckEvent:public genericEvent
+class EV_ReceiveAck:public genericEvent
 {
 public:
-	EV_ReceiveAckEvent() { ev = R_ACK; }
+	EV_ReceiveAck() { ev = R_ACK; }
 
 private:
 
