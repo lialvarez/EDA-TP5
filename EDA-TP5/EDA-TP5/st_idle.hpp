@@ -2,7 +2,7 @@
 #define ST_IDLE_HPP
 
 #include <iostream>
-#include "GenericEvent.hpp"
+#include "genericEvent.hpp"
 #include "genericState.hpp"
 
 class ST_Idle:public genericState
@@ -10,7 +10,6 @@ class ST_Idle:public genericState
 public:
 	genericState* on_SendWRQ(genericEvent *ev);
 	genericState* on_SendRRQ(genericEvent *ev);
-
 };
 
 
