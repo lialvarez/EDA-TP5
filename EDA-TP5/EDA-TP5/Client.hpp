@@ -16,6 +16,10 @@ public:
 	void setLastEvent(string lastEvent);
 	void setExecutedAction(string executedAction);
 
+	string getReceivedevent();
+	string getLastEvent();
+	string getExecutedAction();
+
 private:
 
 	string receivedEvent;

@@ -30,30 +30,39 @@ genericEvent* Client::eventGenerator()
 		switch (c)
 		{
 		case 'w':
+			receivedEvent = "Send WRQ";
 			return ((genericEvent *) new (EV_SendWRQ));
 			break;
 		case 'r':
+			receivedEvent = "Send RRQ";
 			return ((genericEvent *) new (EV_SendRRQ));;
 			break;
 		case 'e':
+			receivedEvent = "Send DATA";
 			return ((genericEvent *) new (EV_SendData));;
 			break;
 		case 'y':
+			receivedEvent = "Send LAST DATA";
 			return ((genericEvent *) new (EV_SendLastData));
 			break;
 		case 'q':
+			receivedEvent = "Send ACK";
 			return ((genericEvent *) new (EV_SendAck));;
 			break;
 		case 'a':
+			receivedEvent = "ACK";
 			return ((genericEvent *) new (EV_ReceiveAck));;
 			break;
 		case 'd':
+			receivedEvent = "DATA";
 			return ((genericEvent *) new (EV_ReceiveData));;
 			break;
 		case 's':
+			receivedEvent = "LAST DATA";
 			return ((genericEvent *) new (EV_ReceiveLastData));;
 			break;
 		case 't':
+			receivedEvent = "TIMEOUT";
 			return ((genericEvent *) new (EV_Timeout));;
 			break;
 		default:
@@ -61,7 +70,6 @@ genericEvent* Client::eventGenerator()
 			break;
 		}
 	}
-	return nullptr;
 }
 
 void Client::setReceivedEvent(string receivedEvent)
@@ -77,4 +85,19 @@ void Client::setLastEvent(string lastEvent)
 void Client::setExecutedAction(string executedAction)
 {
 	this->executedAction = executedAction;
+}
+
+string Client::getExecutedAction()
+{
+	return executedAction;
+}
+
+string Client::getLastEvent()
+{
+	return lastEvent;
+}
+
+string Client::getReceivedevent()
+{
+	return receivedEvent;
 }

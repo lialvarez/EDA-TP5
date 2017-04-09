@@ -9,6 +9,7 @@
 #include "ST_SendData.hpp"
 #include "ST_ReceiveDataAck.hpp"
 #include "ST_SendLastDataAck.hpp"
+#include <string>
 
 
 using namespace std;
@@ -22,8 +23,38 @@ int main()
 
 	while (true) //hacer el evento EXIT PARA SALIR DEL LOOP
 	{
+
+
+		//Imprimir el estado "inicial" de la pantalla
+		//"Evento Recibido" = client.getReceivedevent();
+		//"Ultimo Evento Recibido" = client.getLastEvent();
+		//"Accion Ejecutada" = FSM.getCurrentState()->executedAction;
+
+		//Lo de arriba es para saber donde buscar la info para imprimir.
+
 		ev = client.eventGenerator();
 		FSM.Dispatch(ev);
+
+		//Actualizar evento recibido:
+
+		"Evento Recibido" = client.getReceivedevent();
+
+		//Simular un delay
+		//Actualizar accion ejecutada
+
+		"Accion Ejecutada" = FSM.getCurrentState()->executedAction;
+		
+		//Simular delay
+		//Actualizar "Ultimo Evento Recibido" al evento anterior
+		//Reestablecer "Evento Recibido" a "Esperando EVENTO"
+		//Reestablecer "Accion Ejecutada" a "N/A"
+
+		client.setLastEvent(client.getReceivedevent());
+		client.setReceivedEvent("Esperando EVENTO");
+		FSM.getCurrentState()->executedAction = "N/A";
+
+		
+
 	}
 //	cin.get();
 	return 0;

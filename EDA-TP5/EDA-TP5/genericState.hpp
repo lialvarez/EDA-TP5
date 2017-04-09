@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "genericEvent.hpp"
+#include <string>
 
 class genericState
 {
@@ -18,10 +19,13 @@ public:
 	virtual genericState* on_SendLastData(genericEvent* ev) { return nullptr; }
 	virtual genericState* on_ReceiveLastData(genericEvent* ev) { return nullptr; }
 	virtual genericState* on_timeout(genericEvent* ev) { return nullptr; }
-	
-private:
+
+	string executedAction;
+
+protected:
 
 	event_t lastEvent;
+
 };
 
 #endif // !GENERIC_STATE_H

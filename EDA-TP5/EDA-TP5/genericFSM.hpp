@@ -10,6 +10,7 @@ class genericFSM
 {
 public:
 	void Dispatch(genericEvent* ev);
+	genericState* getCurrentState();
 protected:
 	genericState* currentState;
 };
