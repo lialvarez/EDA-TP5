@@ -37,21 +37,21 @@ int main()
 
 		//Actualizar evento recibido:
 
-		"Evento Recibido" = client.getReceivedevent();
+	/*	"Evento Recibido" = client.getReceivedevent();*/
 
 		//Simular un delay
 		//Actualizar accion ejecutada
 
-		"Accion Ejecutada" = FSM.getCurrentState()->executedAction;
+		//"Accion Ejecutada" = FSM.getCurrentState()->executedAction;
 		
 		//Simular delay
 		//Actualizar "Ultimo Evento Recibido" al evento anterior
 		//Reestablecer "Evento Recibido" a "Esperando EVENTO"
 		//Reestablecer "Accion Ejecutada" a "N/A"
 
-		client.setLastEvent(client.getReceivedevent());
+	/*	client.setLastEvent(client.getReceivedevent());
 		client.setReceivedEvent("Esperando EVENTO");
-		FSM.getCurrentState()->executedAction = "N/A";
+		FSM.getCurrentState()->executedAction = "N/A";*/
 
 		
 
