@@ -4,6 +4,7 @@
 #include "Screen.hpp"
 #include "genericState.hpp"
 #include <string>
+#include <curses.h>
 
 using namespace std;
 
@@ -16,6 +17,7 @@ public:
 	void setReceivedEvent(string receivedEvent);
 	void setLastEvent(string lastEvent);
 	void setExecutedAction(string executedAction);
+	void startScreen (void);
 
 	string getReceivedevent();
 	string getLastEvent();
@@ -26,6 +28,7 @@ private:
 	string receivedEvent;
 	string lastEvent;
 	string executedAction;
+	WINDOW * winTest;
 
 };
 #endif // !CLIENT_HPP

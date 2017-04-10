@@ -84,9 +84,6 @@
     <ClInclude Include="ST_SendLastDataAck.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Screen.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp">

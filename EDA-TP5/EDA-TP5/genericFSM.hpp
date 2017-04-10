@@ -5,6 +5,7 @@
 #include "genericEvent.hpp"
 #include "genericState.hpp"
 
+
 class genericFSM
 {
 public:
