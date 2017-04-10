@@ -23,7 +23,7 @@ int main()
 	Client client;
 	genericFSM FSM;
 	genericEvent *ev = nullptr;
-	WINDOW * winTest=NULL;   
+	WINDOW * winTest = NULL;
 
 	char *Events[30] = {"W = SEND WRQ","R = SEND RRQ","E = SEND DATA","Y = SEND LAST DATA","Q = SEND ACK","A = ACK","D = DATA","S = LAST DATA","T = TIMEOUT"};
 	char *fsmStates[30] = {"Evento Recibido: ","Ultimo Evento Recibido: ","Accion Ejecutada: "};

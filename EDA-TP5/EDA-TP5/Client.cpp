@@ -1,5 +1,5 @@
+#include "curses.h"
 #include "Client.hpp"
-#include "Screen.hpp"
 #include "EV_SendWRQ.hpp"
 #include "EV_SendRRQ.hpp"
 #include "EV_SendData.hpp"

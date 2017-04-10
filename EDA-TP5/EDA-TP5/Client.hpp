@@ -1,6 +1,7 @@
 #ifndef CLIENT_HPP
 #define CLIENT_HPP
 
+#include "Screen.hpp"
 #include "genericState.hpp"
 #include <string>
 
