@@ -82,13 +82,13 @@ int main()
 		printw ("%s", client.getReceivedevent());
 		//"Evento Recibido" = client.getReceivedevent();
 		
-		Sleep (1);
+		Sleep (500);
 		move (16,70);
 		printw ("%s", FSM.getCurrentState()->executedAction);				//Actualiza la accion ejecutada//
 		//Simular un delay
 		//Actualizar accion ejecutada
 		//"Accion Ejecutada" = FSM.getCurrentState()->executedAction;
-		Sleep (1);
+		Sleep (500);
 		move (14,70);														
 		printw ("%s", client.getReceivedevent());							//Actualiza evento anterior//
 		move (12,70);
