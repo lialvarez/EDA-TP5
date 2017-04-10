@@ -2,8 +2,10 @@
 #define GENERIC_STATE_H
 
 #include <iostream>
-#include "genericEvent.hpp"
 #include <string>
+#include "genericEvent.hpp"
+
+using namespace std;
 
 class genericState
 {
