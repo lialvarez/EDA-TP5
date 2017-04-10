@@ -1,5 +1,6 @@
 #include "genericFSM.hpp"
 
+
 void genericFSM::Dispatch(genericEvent *ev)
 {
 	genericState *newState;
