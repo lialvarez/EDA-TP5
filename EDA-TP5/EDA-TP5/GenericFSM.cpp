@@ -40,6 +40,12 @@ void genericFSM::Dispatch(genericEvent *ev)
 	case R_TIMEOUT:
 		newState = currentState->on_timeout(ev);
 		break;
+	case R_ERROR:
+		newState = currentState->on_ReceiveError(ev);
+		break;
+	case S_ERROR:
+		newState = currentState->on_SendError(ev);
+		break;
 	default:
 		break;
 	}

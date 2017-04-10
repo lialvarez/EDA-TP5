@@ -21,6 +21,9 @@ public:
 	virtual genericState* on_SendLastData(genericEvent* ev) { return nullptr; }
 	virtual genericState* on_ReceiveLastData(genericEvent* ev) { return nullptr; }
 	virtual genericState* on_timeout(genericEvent* ev) { return nullptr; }
+	virtual genericState* on_SendError(genericEvent* ev) { return nullptr; }
+	virtual genericState* on_ReceiveError(genericEvent* ev) { return nullptr; }
+	virtual genericState* on_Reset(genericEvent* ev) { return nullptr; }
 
 	string executedAction;
 	string currentState;

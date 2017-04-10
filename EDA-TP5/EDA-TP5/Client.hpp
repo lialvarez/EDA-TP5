@@ -3,10 +3,12 @@
 
 #include "genericState.hpp"
 #include <string>
-
+#include <vector>
 #include "curses.h"
 
 using namespace std;
+
+
 
 class Client
 {
@@ -27,6 +29,7 @@ public:
 
 
 private:
+
 
 	string receivedEvent;
 	string lastEvent;

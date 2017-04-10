@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "ST_Idle.hpp"
 #include "ST_ReceiveWRQAck.hpp"
 #include "ST_ReceiveFirstData.hpp"

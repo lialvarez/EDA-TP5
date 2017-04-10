@@ -9,6 +9,8 @@
 #include "EV_ReceiveData.hpp"
 #include "EV_ReceiveLastData.hpp"
 #include "EV_Timeout.hpp"
+#include "EV_SendError.hpp"
+#include "EV_ReceiveError.hpp"
 
 Client::Client()
 {
@@ -24,8 +26,9 @@ genericEvent* Client::eventGenerator()
 	nodelay(winTest, true);
 	noecho();
 	
-	while((c = getch()) != ERR)
+	do
 	{
+		c = getch();
 		c = tolower(c);
 		switch (c)
 		{
@@ -50,27 +53,34 @@ genericEvent* Client::eventGenerator()
 			return ((genericEvent *) new (EV_SendAck));;
 			break;
 		case 'a':
-			receivedEvent = "ACK";
+			receivedEvent = "Ack.";
 			return ((genericEvent *) new (EV_ReceiveAck));;
 			break;
 		case 'd':
-			receivedEvent = "DATA";
+			receivedEvent = "Data";
 			return ((genericEvent *) new (EV_ReceiveData));;
 			break;
 		case 's':
-			receivedEvent = "LAST DATA";
+			receivedEvent = "Last Data";
 			return ((genericEvent *) new (EV_ReceiveLastData));;
 			break;
 		case 't':
-			receivedEvent = "TIMEOUT";
+			receivedEvent = "Timeout";
 			return ((genericEvent *) new (EV_Timeout));;
 			break;
+		case 'z':
+			receivedEvent = "Send Error";
+			return ((genericEvent*) new (EV_SendError));
+			break;
+		case 'x':
+			receivedEvent = "Error";
+			return ((genericEvent*) new (EV_ReceiveError));
+			break;
 		default:
-			return nullptr;
+			c = ERR;
 			break;
 		}
-	}
-	return nullptr;
+	} while (c == ERR);
 }
 
 void Client::setReceivedEvent(string receivedEvent)

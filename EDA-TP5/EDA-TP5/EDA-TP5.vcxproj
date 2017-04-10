@@ -158,9 +158,11 @@
     <ClInclude Include="curses.h" />
     <ClInclude Include="EV_ReceiveAck.hpp" />
     <ClInclude Include="EV_ReceiveData.hpp" />
+    <ClInclude Include="EV_ReceiveError.hpp" />
     <ClInclude Include="EV_ReceiveLastData.hpp" />
     <ClInclude Include="EV_SendAck.hpp" />
     <ClInclude Include="EV_SendData.hpp" />
+    <ClInclude Include="EV_SendError.hpp" />
     <ClInclude Include="EV_SendLastData.hpp" />
     <ClInclude Include="EV_SendRRQ.hpp" />
     <ClInclude Include="EV_SendWRQ.hpp" />
@@ -169,6 +171,7 @@
     <ClInclude Include="GenericFSM.hpp" />
     <ClInclude Include="GenericState.hpp" />
     <ClInclude Include="panel.h" />
+    <ClInclude Include="ST_Error.hpp" />
     <ClInclude Include="ST_Idle.hpp" />
     <ClInclude Include="ST_ReceiveData.hpp" />
     <ClInclude Include="ST_ReceiveDataAck.hpp" />
@@ -183,6 +186,7 @@
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="GenericFSM.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="ST_Error.cpp" />
     <ClCompile Include="ST_Idle.cpp" />
     <ClCompile Include="ST_ReceiveData.cpp" />
     <ClCompile Include="ST_ReceiveDataAck.cpp" />
