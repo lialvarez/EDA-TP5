@@ -42,7 +42,6 @@ void genericFSM::Dispatch(genericEvent *ev)
 		delete currentState;
 		currentState = newState;
 	}
-	
 }
 
 genericState* genericFSM::getCurrentState()

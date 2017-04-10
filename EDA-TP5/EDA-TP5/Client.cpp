@@ -21,7 +21,7 @@ Client::Client()
 genericEvent* Client::eventGenerator()
 {
 	char c;
-	nodelay(terminalScreen, true);
+	nodelay(winTest, true);
 	noecho();
 	
 	while((c = getch()) != ERR)
@@ -70,6 +70,7 @@ genericEvent* Client::eventGenerator()
 			break;
 		}
 	}
+	return nullptr;
 }
 
 void Client::setReceivedEvent(string receivedEvent)
