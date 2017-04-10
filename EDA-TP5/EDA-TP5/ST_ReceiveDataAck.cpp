@@ -4,13 +4,20 @@
 
 using namespace std;
 
+ST_ReceiveDataAck::ST_ReceiveDataAck()
+{
+	currentState = "Waiting for Data Ack.";
+}
+
 genericState* ST_ReceiveDataAck :: on_ReceiveAck(genericEvent* ev)
 {
-    cout << "Previous state: Waiting to receive data ACK" << endl << "Event received: ACK" << endl << "New state: Waiting to send data" << endl << endl;
-    return ((genericState*) new ST_SendData());
+	genericState *ret = (genericState*) new ST_SendData();
+	ret->executedAction = "N/A";
+    return ret;
 };
 genericState* ST_ReceiveDataAck :: on_timeout(genericEvent* ev)
 {
-    cout << "Previous state: Waiting to receive data ACK" << endl << "Event received: timeout. Data was resent" << endl << "New state: Waiting to receive data ACK" << endl << endl;
-    return ((genericState*) new ST_ReceiveDataAck());
+	genericState *ret = (genericState*) new ST_ReceiveDataAck();
+	ret->executedAction = "N/A";
+    return ret;
 };

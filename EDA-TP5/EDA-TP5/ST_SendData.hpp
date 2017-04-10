@@ -6,6 +6,9 @@
 class ST_SendData : public genericState
 {
 public:
+
+	ST_SendData();
+
     genericState* on_SendData(genericEvent* ev);
 	genericState* on_SendLastData(genericEvent* ev);
 };

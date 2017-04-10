@@ -5,15 +5,21 @@
 
 using namespace std;
 
+ST_Idle::ST_Idle()
+{
+	currentState = "Idle";
+}
+
 genericState* ST_Idle::on_SendWRQ(genericEvent *ev)
 {
-	executedAction = "WRQ Sent";
-    //cout << "Previous state: idle" << endl << "Event received: s_wrq, an WRQ was sent" << endl << "New state: ReceiveWRQAck" << endl << endl;
-    return ((genericState*) new ST_ReceiveWRQAck());
+	genericState *ret = (genericState*) new ST_ReceiveWRQAck();
+	ret->executedAction = "WRQ Sent";
+	return ret;
 };
+
 genericState* ST_Idle::on_SendRRQ(genericEvent *ev)
 {
-	executedAction = "RRQ Sent";
-    //cout << "Previous state: idle" << endl << "Event received: s_rrq, an RRQ was sent" << endl << "New state: ReceiveFirstData" << endl << endl;
-    return ((genericState*) new ST_ReceiveFirstData());
+	genericState *ret = (genericState*) new ST_ReceiveFirstData();
+	ret->executedAction = "RRQ Sent";
+	return ret;
 };

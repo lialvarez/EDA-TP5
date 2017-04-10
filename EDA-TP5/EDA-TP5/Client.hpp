@@ -1,10 +1,10 @@
 #ifndef CLIENT_HPP
 #define CLIENT_HPP
 
-#include "Screen.hpp"
 #include "genericState.hpp"
 #include <string>
-#include <curses.h>
+
+#include "curses.h"
 
 using namespace std;
 
@@ -17,17 +17,21 @@ public:
 	void setReceivedEvent(string receivedEvent);
 	void setLastEvent(string lastEvent);
 	void setExecutedAction(string executedAction);
+	void setCurrentState(string currentState);
 	void startScreen (void);
 
+	string getCurrentState();
 	string getReceivedevent();
 	string getLastEvent();
 	string getExecutedAction();
+
 
 private:
 
 	string receivedEvent;
 	string lastEvent;
 	string executedAction;
+	string currentState;
 	WINDOW * winTest;
 
 };

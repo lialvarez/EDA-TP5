@@ -1,4 +1,3 @@
-#include "curses.h"
 #include "Client.hpp"
 #include "EV_SendWRQ.hpp"
 #include "EV_SendRRQ.hpp"
@@ -10,7 +9,6 @@
 #include "EV_ReceiveData.hpp"
 #include "EV_ReceiveLastData.hpp"
 #include "EV_Timeout.hpp"
-#include <curses.h>
 
 Client::Client()
 {
@@ -90,6 +88,16 @@ void Client::setExecutedAction(string executedAction)
 	this->executedAction = executedAction;
 }
 
+void Client::setCurrentState(string currentState)
+{
+	this->currentState = currentState;
+}
+
+string Client::getCurrentState()
+{
+	return currentState;
+}
+
 string Client::getExecutedAction()
 {
 	return executedAction;
@@ -115,7 +123,8 @@ void Client::startScreen ()
 		start_color();
 		init_pair(1,COLOR_WHITE, COLOR_BLACK);
 		init_pair(2,COLOR_BLUE, COLOR_WHITE);
-		init_pair(3,COLOR_RED, COLOR_BLACK);
+		init_pair(3,COLOR_GREEN, COLOR_BLACK);
+		init_pair(4, COLOR_GREEN, COLOR_BLACK);
 		immedok(winTest,TRUE);
 	}
 
@@ -132,7 +141,7 @@ void Client::startScreen ()
 	printw("Cuando el usuario presiona las teclas de eventos entiende que se genero un nuevo evento");
 	move (7,0);
 	printw ("y responde ante ese evento realizando una accion y cambiando el estado.");
-	move (10,0);color_set (3,NULL);
+	move (10,0);color_set (1,NULL);
 	printw ("Eventos:"); move (10,45); printw ("Status de la FSM:");
 	color_set (1,NULL);
 

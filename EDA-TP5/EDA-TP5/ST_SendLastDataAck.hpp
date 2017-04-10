@@ -6,8 +6,10 @@
 class ST_SendLastDataAck : public genericState
 {
 public:
+
+	ST_SendLastDataAck();
+
 	genericState* on_SendAck(genericEvent* ev);
-private:
 
 };
 

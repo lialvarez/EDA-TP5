@@ -1,5 +1,11 @@
 #include "genericFSM.hpp"
+#include "ST_Idle.hpp"
 
+genericFSM::genericFSM()
+{
+	currentState = (genericState *) new ST_Idle();
+	printf("Ejecuta el constructor\n");
+}
 
 void genericFSM::Dispatch(genericEvent *ev)
 {

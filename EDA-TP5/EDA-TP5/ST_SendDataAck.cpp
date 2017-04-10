@@ -2,12 +2,16 @@
 #include "ST_SendDataAck.hpp"
 #include "ST_ReceiveData.hpp"
 
-
 using namespace std;
 
-genericState* ST_SendDataAck ::on_SendAck(genericEvent *ev)
+ST_SendDataAck::ST_SendDataAck()
 {
-	executedAction = "ACK Sent";
-	//cout << "Previous state: Waiting to send data ACK" << endl << "Event received: send ACK. ACK was sent" << endl << "New state: Waiting to receive data" << endl << endl;
-    return ((genericState*) new ST_ReceiveData());
-};
+	currentState = "Waiting to Send Data Ack.";
+}
+
+genericState* ST_SendDataAck::on_SendAck(genericEvent *ev)
+{
+	genericState *ret = (genericState*) new ST_ReceiveData();
+	ret->executedAction = "Ack. Sent";
+	return ret;
+}

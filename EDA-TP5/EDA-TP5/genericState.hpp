@@ -23,6 +23,7 @@ public:
 	virtual genericState* on_timeout(genericEvent* ev) { return nullptr; }
 
 	string executedAction;
+	string currentState;
 
 protected:
 

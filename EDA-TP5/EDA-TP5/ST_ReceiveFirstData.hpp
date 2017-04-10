@@ -6,6 +6,9 @@
 class ST_ReceiveFirstData : public genericState
 {
 public:
+
+	ST_ReceiveFirstData();
+
 	genericState* on_timeout(genericEvent* ev);
 	genericState* on_ReceiveData(genericEvent* ev);
 };

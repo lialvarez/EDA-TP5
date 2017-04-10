@@ -6,6 +6,9 @@
 class ST_ReceiveWRQAck : public genericState
 {
 public:
+
+	ST_ReceiveWRQAck();
+
 	genericState* on_ReceiveAck(genericEvent* ev);
 	genericState* on_timeout(genericEvent* ev);
 };

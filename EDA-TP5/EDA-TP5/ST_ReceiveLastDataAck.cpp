@@ -4,13 +4,20 @@
 
 using namespace std;
 
+ST_ReceiveLastDataAck::ST_ReceiveLastDataAck()
+{
+	currentState = "Waiting for Last Data Ack.";
+}
+
 genericState* ST_ReceiveLastDataAck :: on_ReceiveAck(genericEvent* ev)
 {
-    cout << "Previous state: Waiting to receive last data ACK" << endl << "Event received: received ACK" << endl << "New state: Idle" << endl << endl;
-    return ((genericState*) new ST_Idle());
+	genericState *ret = (genericState*) new ST_Idle();
+	ret->executedAction = "N/A";
+    return ret;
 };
 genericState* ST_ReceiveLastDataAck :: on_timeout(genericEvent* ev)
 {
-    cout << "Previous state: Waiting to receive last data ACK" << endl << "Event received: timeout. Data was resent" << endl << "New state: Waiting to receive last data ACK" << endl << endl;
-    return ((genericState*) new ST_ReceiveLastDataAck());
+	genericState *ret = (genericState*) new ST_ReceiveLastDataAck();
+	ret->executedAction = "N/A";
+    return ret;
 };

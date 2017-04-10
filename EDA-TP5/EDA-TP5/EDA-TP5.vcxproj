@@ -96,6 +96,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\lisan\Source\Repos\EDA-TP5\EDA-TP5\EDA-TP5;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;pdcurses.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -153,6 +155,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Client.hpp" />
+    <ClInclude Include="curses.h" />
     <ClInclude Include="EV_ReceiveAck.hpp" />
     <ClInclude Include="EV_ReceiveData.hpp" />
     <ClInclude Include="EV_ReceiveLastData.hpp" />
@@ -165,8 +168,8 @@
     <ClInclude Include="GenericEvent.hpp" />
     <ClInclude Include="GenericFSM.hpp" />
     <ClInclude Include="GenericState.hpp" />
+    <ClInclude Include="panel.h" />
     <ClInclude Include="ST_Idle.hpp" />
-    <ClInclude Include="ST_ReceiveAck.hpp" />
     <ClInclude Include="ST_ReceiveData.hpp" />
     <ClInclude Include="ST_ReceiveDataAck.hpp" />
     <ClInclude Include="ST_ReceiveFirstData.hpp" />
@@ -180,7 +183,6 @@
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="GenericFSM.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Screen.cpp" />
     <ClCompile Include="ST_Idle.cpp" />
     <ClCompile Include="ST_ReceiveData.cpp" />
     <ClCompile Include="ST_ReceiveDataAck.cpp" />
@@ -193,13 +195,6 @@
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
-    <Import Project="..\packages\pdcurses_vc120.3.4.0.3\build\native\pdcurses_vc120.targets" Condition="Exists('..\packages\pdcurses_vc120.3.4.0.3\build\native\pdcurses_vc120.targets')" />
     <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   </ImportGroup>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\pdcurses_vc120.3.4.0.3\build\native\pdcurses_vc120.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\pdcurses_vc120.3.4.0.3\build\native\pdcurses_vc120.targets'))" />
-  </Target>
 </Project>

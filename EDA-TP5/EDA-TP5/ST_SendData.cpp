@@ -5,17 +5,23 @@
 
 using namespace std;
 
+ST_SendData::ST_SendData()
+{
+	currentState = "Waiting to Send Data";
+}
+
 genericState* ST_SendData :: on_SendData(genericEvent* ev)
 {
-	executedAction = "DATA Sent";
-    //cout << "Previous state: Waiting to send data" << endl << "Event received: send data. Data was sent" << endl << "New state: Waiting to receive data ACK" << endl << endl;
-    return ((genericState*) new ST_ReceiveDataAck());
+	genericState *ret = (genericState *) new ST_ReceiveDataAck();
+	ret->executedAction = "Data Sent";
+	return ret;
 };
+
 genericState* ST_SendData :: on_SendLastData(genericEvent* ev)
 {
-	executedAction = "LAST DATA Sent";
-    //cout << "Previous state: Waiting to send data" << endl << "Event received: send last data. Last data was sent" << endl << "New state: Waiting to receive last data ACK" << endl << endl;
-    return ((genericState*) new ST_ReceiveLastDataAck());
+	genericState *ret = (genericState *) new ST_ReceiveLastDataAck();
+	ret->executedAction = "Last Data Sent";
+	return ret;
 };
 
 
