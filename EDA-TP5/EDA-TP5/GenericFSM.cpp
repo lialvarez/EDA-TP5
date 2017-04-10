@@ -3,7 +3,7 @@
 
 void genericFSM::Dispatch(genericEvent *ev)
 {
-	genericState *newState;
+	genericState *newState = nullptr;
 
 	switch (ev->getEventType())
 	{
