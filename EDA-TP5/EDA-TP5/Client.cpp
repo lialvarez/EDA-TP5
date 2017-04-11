@@ -132,7 +132,7 @@ string Client::getReceivedevent()
 //GRAFICA LA PANTALLA INICIAL CORRESPONDIENTE A LA SIMULACION DEL CLIENTE//
 void Client::startScreen ()
 {   
-	char *Events[30] = {"W = SEND WRQ","R = SEND RRQ","E = SEND DATA","Y = SEND LAST DATA","Q = SEND ACK","A = ACK","D = DATA","S = LAST DATA","T = TIMEOUT"};
+	char *Events[30] = {"W = Send WRQ","R = Send RRQ","E = Send Data","Y = Send Last Data","Q = Send Ack.", "Z = Send Error", "A = Ack.","D = Data","S = Last Data","T = Timeout", "X = Error", "ESC = Close Client"};
 	char *fsmStates[30] = {"Evento Recibido: ","Ultimo Evento Recibido: ","Accion Ejecutada: "};
 
 	{
@@ -161,9 +161,9 @@ void Client::startScreen ()
 	printw ("Eventos:"); move (10,45); printw ("Status de la FSM:");
 	color_set (1,NULL);
 
-	for(int i=6;i<(9+6);i++)
+	for(int i=6;i<(12+6);i++)
 	{
-		move (i*2,0);
+		move (6+i,0);
 		printw ("%s",Events[i-6]);
 	}
 		
