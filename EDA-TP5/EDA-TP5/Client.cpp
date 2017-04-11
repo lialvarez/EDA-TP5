@@ -33,7 +33,7 @@ genericEvent* Client::eventGenerator()
 		c = tolower(c);
 		if (c == 27)
 		{
-			receivedEvent = "Client Closed";
+			receivedEvent = "Close Client";
 			return ((genericEvent*) new (EV_CloseClient));
 		}
 		switch (c)
