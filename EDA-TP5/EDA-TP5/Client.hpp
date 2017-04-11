@@ -22,6 +22,7 @@ using namespace std;
 class Client
 {
 public:
+
 	Client();
 
 	genericEvent* eventGenerator();
@@ -39,16 +40,12 @@ public:
 	string getLastEvent();
 	string getExecutedAction();
 
-
 protected:
-
 
 	string receivedEvent;
 	string lastEvent;
 	string executedAction;
 	string currentState;
-	int xMax;
-	int yMax;
 	WINDOW * winTest;
 
 };
