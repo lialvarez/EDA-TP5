@@ -38,6 +38,7 @@ genericEvent* Client::eventGenerator()
         case ESC:
 			receivedEvent = "Close Client";
 			return ((genericEvent*) new (EV_CloseClient));
+			break;
 		case 'w':
 			receivedEvent = "Send WRQ";
 			return ((genericEvent *) new (EV_SendWRQ));
