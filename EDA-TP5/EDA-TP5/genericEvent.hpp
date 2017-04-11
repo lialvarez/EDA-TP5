@@ -6,8 +6,8 @@ typedef enum { NO_EV, EV_EXIT, S_WRQ, S_RRQ, S_DATA, R_DATA, S_ACK, R_ACK, S_LAS
 class genericEvent
 {
 public:
-	genericEvent() { ev = NO_EV; }
-	event_t getEventType() { return ev; }
+	genericEvent() { ev = NO_EV; }  //por default, se setea el tipo de evento en NO_EV. Si otra clase hereda genericEvent, puede cambiar el constructor para setear el evento como el que corresponda
+	event_t getEventType() { return ev; }   //getter
 
 protected:
 	event_t ev;

@@ -16,6 +16,8 @@ void genericFSM::Dispatch(genericEvent *ev)
 {
 	genericState *newState = nullptr;
 
+    
+    //lamar a la funcion del estado actual correspondiente al evento recibido
 	switch (ev->getEventType())
 	{
 	case S_WRQ:
@@ -57,7 +59,7 @@ void genericFSM::Dispatch(genericEvent *ev)
 	default:
 		break;
 	}
-	if (newState != nullptr)
+	if (newState != nullptr)    //si hubo nullptr
 	{
 		delete currentState;
 		currentState = newState;

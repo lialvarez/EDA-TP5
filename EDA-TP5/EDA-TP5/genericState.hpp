@@ -11,6 +11,7 @@ class genericState
 {
 public:
 
+    // Estas funciones responden a los eventos recibidos en el estado actual. Por default, se toma que los eventos recibidos son eventos inesperados, lo que sse indica devolviendo nullptr. Al ser virtuales, las clases de los estados especificos que heredan a genericState pueden redefinir que respuesta tomar ante los eventos que no son inesperados para ese estado en especifico.
 	virtual genericState* on_SendWRQ(genericEvent* ev) { return nullptr; }
 	virtual genericState* on_SendRRQ(genericEvent* ev) { return nullptr; }
 	virtual genericState* on_ReceiveWRQAck(genericEvent* ev) { return nullptr; }
@@ -25,15 +26,15 @@ public:
 	virtual genericState* on_ReceiveError(genericEvent* ev) { return nullptr; }
 	virtual genericState* on_CloseClient(genericEvent* ev) { return nullptr; }
 
-	void setLastEvent(event_t lastEvent) { this->lastEvent = lastEvent; }
-	event_t getLastEvent() { return lastEvent; }
+	void setLastEvent(event_t lastEvent) { this->lastEvent = lastEvent; }   //setter
+	event_t getLastEvent() { return lastEvent; }    //getter
 
 	string executedAction;
 	string currentState;
 
 protected:
 
-	event_t lastEvent;
+	event_t lastEvent;  //ultimo evento recibido
 
 };
 

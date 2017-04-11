@@ -13,6 +13,8 @@
 #include "EV_ReceiveError.hpp"
 #include "EV_CloseClient.hpp"
 
+#define ESC 27
+
 Client::Client()
 {
 	receivedEvent = "Esperando EVENTO";
@@ -23,21 +25,19 @@ Client::Client()
 
 genericEvent* Client::eventGenerator()
 {
-	char c;
-	nodelay(winTest, true);
-	noecho();
+	char c;                 //variable que contiene a la tecla presionada
+	nodelay(winTest, true); //establece el modo no bloqueante de lectura de teclado
+	noecho();               //permite presionar teclas sin generar cambios en la pantalla
 	
 	do
 	{
-		c = getch();
+		c = getch();        //devuelve ERR cuando no se apreta ninguna tecla
 		c = tolower(c);
-		if (c == 27)
-		{
+        switch (c)
+        {
+        case ESC:
 			receivedEvent = "Close Client";
 			return ((genericEvent*) new (EV_CloseClient));
-		}
-		switch (c)
-		{
 		case 'w':
 			receivedEvent = "Send WRQ";
 			return ((genericEvent *) new (EV_SendWRQ));
@@ -82,13 +82,14 @@ genericEvent* Client::eventGenerator()
 			receivedEvent = "Error";
 			return ((genericEvent*) new (EV_ReceiveError));
 			break;
-		default:
+		default:    //si se apreto alguna tecla no mapeada, indicar que se debe seguir leyendo el teclado
 			c = ERR;
 			break;
 		}
-	} while (c == ERR);
+	} while (c == ERR);     //dejar de leer el teclado ua vez que se aprete una tecla valida
 }
 
+//SETTERS
 void Client::setReceivedEvent(string receivedEvent)
 {
 	this->receivedEvent = receivedEvent;
@@ -109,6 +110,7 @@ void Client::setCurrentState(string currentState)
 	this->currentState = currentState;
 }
 
+//GETTERS
 string Client::getCurrentState()
 {
 	return currentState;
@@ -145,7 +147,7 @@ void Client::startScreen ()
 		immedok(winTest,TRUE);
 	}
 
-	//Se imprime la pantalla inicial que mostrara el estado de la FSM y las teclas correspondientes a los eventos//
+	//Se imprime la pantalla inicial que mostrara el estado de la FSM y las teclas correspondientes a los eventos
 	color_set (2,NULL);
 	move(1, LEFTMARGIN1);
 	printw("Instituto Tecnologico de Buenos Aires");
