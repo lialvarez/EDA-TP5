@@ -15,3 +15,18 @@ genericState* ST_SendLastDataAck :: on_SendAck(genericEvent* ev)
 	ret->executedAction = "Last Data Ack. Sent";
 	return ret;
 };
+
+genericState* ST_SendLastDataAck::on_SendError(genericEvent* ev)
+{
+	genericState* ret = (genericState*) new ST_Idle();
+	ret->executedAction = "Error Sent, Client Restarted";
+	return ret;
+}
+
+genericState* ST_SendLastDataAck::on_CloseClient(genericEvent* ev)
+{
+	genericState* ret = (genericState*) new ST_Idle();
+	ret->setLastEvent(CLOSE_CLIENT);
+	ret->executedAction = "Client Closed";
+	return ret;
+}

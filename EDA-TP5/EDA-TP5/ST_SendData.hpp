@@ -11,6 +11,8 @@ public:
 
     genericState* on_SendData(genericEvent* ev);
 	genericState* on_SendLastData(genericEvent* ev);
+	genericState* on_SendError(genericEvent* ev);
+	genericState* on_CloseClient(genericEvent* ev);
 };
 
 

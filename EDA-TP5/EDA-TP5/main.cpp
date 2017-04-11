@@ -20,18 +20,16 @@ using namespace std;
 
 void refreshScreen(Client client);
 
-int main()
+void main()
 {
 
 	Client client;
 	genericFSM FSM;
 	genericEvent *ev = nullptr;
 
-	client.startScreen();														//Seteo pantalla inicial//
-	while (true) //hacer el evento EXIT PARA SALIR DEL LOOP
+	client.startScreen();	//Seteo pantalla inicial//
+	do 
 	{
-		//ESTO HAY QUE ACOMODARLO PARA QUE QUEDE EN EL CLIENT Y DESDE AHI PUEDA CAMBIAR LA INFORMACION//
-		//ESTA ACA PARA TESTEAR//
 
 		client.setCurrentState(FSM.getCurrentState()->currentState);
 		refreshScreen(client);
@@ -51,34 +49,8 @@ int main()
 		client.setReceivedEvent("Esperando EVENTO");
 		Sleep(1000);
 
-		
-		//move (12,70);														//Actualiza evento recibido//
-		//printw ("%s", client.getReceivedevent().c_str());
-		//move(14, 70);
-
-		//Sleep (500);
-		//move (16,70);
-		//printw ("%s", FSM.getCurrentState()->executedAction.c_str());				//Actualiza la accion ejecutada//
-		//Simular un delay
-		//Actualizar accion ejecutada
-		//"Accion Ejecutada" = FSM.getCurrentState()->executedAction;
-		//Sleep (500);
-		//move (14,70);														
-		//printw ("%s", client.getReceivedevent().c_str());							//Actualiza evento anterior//
-		//move (12,70);
-		//printw ("Esperando Evento");										//Actualiza evento actual//
-		/*move (16,70);*/
-		//printw ("N/A");														//Actualiza accion derivada del evento//
-		//Simular delay
-		//Actualizar "Ultimo Evento Recibido" al evento anterior
-		//Reestablecer "Evento Recibido" a "Esperando EVENTO"
-		//Reestablecer "Accion Ejecutada" a "N/A"
-	
-		//client.setLastEvent(client.getReceivedevent());
-		//client.setReceivedEvent("Esperando EVENTO");
-		//FSM.getCurrentState()->executedAction = "N/A";
-	}
-	return 0;
+	} while ((FSM.getCurrentState())->getLastEvent() != CLOSE_CLIENT);
+	Sleep(2000);
 }
 
 void refreshScreen(Client client)

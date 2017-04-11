@@ -13,6 +13,8 @@ public:
 
 	genericState* on_SendWRQ(genericEvent *ev);
 	genericState* on_SendRRQ(genericEvent *ev);
+	genericState* on_SendError(genericEvent* ev);
+	genericState* on_CloseClient(genericEvent* ev);
 };
 
 

@@ -11,6 +11,7 @@
 #include "EV_Timeout.hpp"
 #include "EV_SendError.hpp"
 #include "EV_ReceiveError.hpp"
+#include "EV_CloseClient.hpp"
 
 Client::Client()
 {
@@ -30,6 +31,11 @@ genericEvent* Client::eventGenerator()
 	{
 		c = getch();
 		c = tolower(c);
+		if (c == 27)
+		{
+			receivedEvent = "Client Closed";
+			return ((genericEvent*) new (EV_CloseClient));
+		}
 		switch (c)
 		{
 		case 'w':

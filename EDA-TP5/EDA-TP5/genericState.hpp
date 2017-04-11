@@ -23,7 +23,10 @@ public:
 	virtual genericState* on_timeout(genericEvent* ev) { return nullptr; }
 	virtual genericState* on_SendError(genericEvent* ev) { return nullptr; }
 	virtual genericState* on_ReceiveError(genericEvent* ev) { return nullptr; }
-	virtual genericState* on_Reset(genericEvent* ev) { return nullptr; }
+	virtual genericState* on_CloseClient(genericEvent* ev) { return nullptr; }
+
+	void setLastEvent(event_t lastEvent) { this->lastEvent = lastEvent; }
+	event_t getLastEvent() { return lastEvent; }
 
 	string executedAction;
 	string currentState;

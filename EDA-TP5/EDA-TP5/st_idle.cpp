@@ -22,3 +22,18 @@ genericState* ST_Idle::on_SendRRQ(genericEvent *ev)
 	ret->executedAction = "RRQ Sent";
 	return ret;
 };
+
+genericState* ST_Idle::on_SendError(genericEvent* ev)
+{
+	genericState* ret = (genericState*) new ST_Idle();
+	ret->executedAction = "Error Sent, Client Restarted";
+	return ret;
+}
+
+genericState* ST_Idle::on_CloseClient(genericEvent* ev)
+{
+	genericState* ret = (genericState*) new ST_Idle();
+	ret->setLastEvent(CLOSE_CLIENT);
+	ret->executedAction = "Client Closed";
+	return ret;
+}

@@ -11,6 +11,7 @@ public:
 
 	genericState* on_ReceiveAck(genericEvent* ev);
 	genericState* on_timeout(genericEvent* ev);
+	genericState* on_ReceiveError(genericEvent* ev);
 };
 
 #endif // !ST_R_WRQ_ACK_HPP

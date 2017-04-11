@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "ST_ReceiveWRQAck.hpp"
 #include "ST_SendData.hpp"
+#include "ST_Idle.hpp"
 
 using namespace std;
 
@@ -21,3 +22,10 @@ genericState* ST_ReceiveWRQAck :: on_timeout(genericEvent* ev)
 	ret->executedAction = "N/A";
     return ret;
 };
+
+genericState* ST_ReceiveWRQAck::on_ReceiveError(genericEvent* ev)
+{
+	genericState *ret = (genericState*) new ST_Idle();
+	ret->executedAction = "Error Received, Client Restarted";
+	return ret;
+}

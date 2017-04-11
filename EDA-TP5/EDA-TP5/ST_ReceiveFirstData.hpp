@@ -11,6 +11,7 @@ public:
 
 	genericState* on_timeout(genericEvent* ev);
 	genericState* on_ReceiveData(genericEvent* ev);
+	genericState* on_ReceiveError(genericEvent* ev);
 };
 
 #endif // !R_FIRST_DATA_HPP

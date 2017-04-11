@@ -46,6 +46,9 @@ void genericFSM::Dispatch(genericEvent *ev)
 	case S_ERROR:
 		newState = currentState->on_SendError(ev);
 		break;
+	case CLOSE_CLIENT:
+		newState = currentState->on_CloseClient(ev);
+		break;
 	default:
 		break;
 	}

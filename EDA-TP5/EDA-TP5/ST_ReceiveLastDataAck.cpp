@@ -21,3 +21,10 @@ genericState* ST_ReceiveLastDataAck :: on_timeout(genericEvent* ev)
 	ret->executedAction = "N/A";
     return ret;
 };
+
+genericState* ST_ReceiveLastDataAck::on_ReceiveError(genericEvent* ev)
+{
+	genericState *ret = (genericState*) new ST_Idle();
+	ret->executedAction = "Error Received, Client Restarted";
+	return ret;
+}

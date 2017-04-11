@@ -10,7 +10,8 @@ public:
 	ST_SendLastDataAck();
 
 	genericState* on_SendAck(genericEvent* ev);
-
+	genericState* on_SendError(genericEvent* ev);
+	genericState* on_CloseClient(genericEvent* ev);
 };
 
 #endif // !ST_S_LAST_DATA_ACK_HPP
