@@ -6,9 +6,13 @@
 #include <vector>
 #include "curses.h"
 
+#define FIRSTLINE 11
+#define INTERSPACING 2
+#define LEFTMARGIN1 1
+#define LEFTMARGIN2 45
+#define LEFTMARGIN3 70
+
 using namespace std;
-
-
 
 class Client
 {
@@ -28,13 +32,15 @@ public:
 	string getExecutedAction();
 
 
-private:
+protected:
 
 
 	string receivedEvent;
 	string lastEvent;
 	string executedAction;
 	string currentState;
+	int xMax;
+	int yMax;
 	WINDOW * winTest;
 
 };

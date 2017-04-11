@@ -11,6 +11,7 @@ class genericFSM
 public:
 
 	genericFSM();
+	~genericFSM();
 
 	void Dispatch(genericEvent* ev);
 	genericState* getCurrentState();

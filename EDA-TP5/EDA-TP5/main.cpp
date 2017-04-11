@@ -12,10 +12,6 @@
 #include <string>
 #include <windows.h>
 
-#define FIRSTLINE 10
-#define INTERSPACING 2
-#define LEFTMARGIN 70
-
 using namespace std;
 
 void refreshScreen(Client client);
@@ -55,25 +51,25 @@ void main()
 
 void refreshScreen(Client client)
 {
-	int currentLine = FIRSTLINE;
+	int currentLine = FIRSTLINE + 4;
 
 	color_set(3, NULL);
-	move(currentLine, LEFTMARGIN);
+	move(currentLine, LEFTMARGIN3);
 	clrtoeol();
 	printw("%s", client.getCurrentState().c_str());
 
 	currentLine += INTERSPACING;
-	move(currentLine, LEFTMARGIN);
+	move(currentLine, LEFTMARGIN3);
 	clrtoeol();
 	printw("%s", client.getReceivedevent().c_str());
 
 	currentLine += INTERSPACING;
-	move(currentLine, LEFTMARGIN);
+	move(currentLine, LEFTMARGIN3);
 	clrtoeol();
 	printw("%s", client.getLastEvent().c_str());
 
 	currentLine += INTERSPACING;
-	move(currentLine, LEFTMARGIN);
+	move(currentLine, LEFTMARGIN3);
 	clrtoeol();
 	printw("%s", client.getExecutedAction().c_str());
 

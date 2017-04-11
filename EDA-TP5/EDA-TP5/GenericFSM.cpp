@@ -7,6 +7,11 @@ genericFSM::genericFSM()
 	printf("Ejecuta el constructor\n");
 }
 
+genericFSM::~genericFSM()
+{
+	delete currentState;
+}
+
 void genericFSM::Dispatch(genericEvent *ev)
 {
 	genericState *newState = nullptr;
